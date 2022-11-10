@@ -3,9 +3,9 @@ class Bank(val name:String) {
     inner class Account(val owner:String, val isProfessional:Boolean = false, val ID:Int) {
 
         // init of the inner class
-        var balance = 0.0
-        var records = mutableListOf<Int>()
-        var bankPercentage = 1.0
+        private var balance = 0.0
+        private var records = mutableListOf<Int>()
+        private var bankPercentage = 1.0
 
         init {
             if (isProfessional)
@@ -41,8 +41,8 @@ class Bank(val name:String) {
     }
 
     // init of the outer class
-    var accountsList = mutableListOf<Account>()
-    var bankProfits = 0.0
+    private var accountsList = mutableListOf<Account>()
+    private var bankProfits = 0.0
 
     fun createAccount(owner:String, isProfessional:Boolean = false): Bank.Account{
         var tmp = this.Account(owner, isProfessional, this.accountsList.size)
