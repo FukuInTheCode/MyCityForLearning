@@ -9,7 +9,7 @@ class Bank(val name:String) {
 
         init {
             if (isProfessional)
-                bankPercentage = 0.95
+                bankPercentage = 0.995
         }
 
 
@@ -28,6 +28,16 @@ class Bank(val name:String) {
         }
 
 
+        fun withdraw(amount: Int){
+            if (amount > 0 ){
+                this.balance -= amount
+                this.records.add(-amount)
+                println("$amount has been withdrawn from your account. Your Balance is now $balance")
+            }else{
+                println("Your amount is not valid. Please enter a strictly positive amount.")
+            }
+
+        }
     }
 
     // init of the outer class
